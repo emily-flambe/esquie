@@ -9,7 +9,11 @@
     "build": "wrangler build",
     "start": "wrangler dev --local",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:integration": "vitest run tests/integration.test.js",
+    "deploy:preview": "wrangler deploy --env preview",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:prod": "wrangler deploy --env production"
   },
   "keywords": [
     "cloudflare-workers",
