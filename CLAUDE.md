@@ -8,16 +8,11 @@ When working in planning and research mode, all documentation should be:
 
 This ensures all planning documents, research notes, and design documentation are organized in a centralized location.
 
-### Directory Structure
-```
-docs/
-├── planning/     # Strategic planning documents
-├── research/     # Research findings and analysis
-├── design/       # Design documents and specifications
-└── notes/        # General notes and ideas
-```
+## Code writing mode
 
-Feel free to create subdirectories within `docs/` as needed to organize different types of planning and research materials.
+While in code writing mode, spend a little more time thinking before taking action when implementing changes to the frontend (and even longer when modifying CSS).
+
+Whenever possible, delegate tasks that can be run in parallel to subagents. Always display a colorful message when you are doing this, because it is fun.
 
 ## Code Writing Restrictions
 
@@ -28,3 +23,12 @@ When in planning or research mode:
 - Focus on design, architecture, and documentation
 - Create specifications and technical plans instead of code
 - Use pseudocode or high-level descriptions when illustrating concepts
+
+## Development Server Management
+
+**IMPORTANT**: Claude should NOT run the development server directly.
+
+When a development server needs to be started:
+- Pause and provide the exact command to run
+- Wait for the user to start the server
+- Continue with any subsequent tasks after confirmation

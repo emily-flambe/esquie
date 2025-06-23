@@ -1,0 +1,26 @@
+{
+  "esquie1.jpg": {
+    "objectFit": "cover",
+    "objectPosition": "center 15%"
+  },
+  "esquie2.jpg": {
+    "objectFit": "cover",
+    "objectPosition": "center 15%"
+  },
+  "esquie3.jpg": {
+    "objectFit": "cover",
+    "objectPosition": "center top"
+  },
+  "esquie4.jpg": {
+    "objectFit": "cover",
+    "objectPosition": "center 30%"
+  },
+  "esquie5.jpg": {
+    "objectFit": "cover",
+    "objectPosition": "center 15%"
+  },
+  "esquie6.jpg": {
+    "objectFit": "cover",
+    "objectPosition": "center center"
+  }
+}
