@@ -104,17 +104,23 @@ Add new quotes to the `QUOTES` array in `src/index.js` following Esquie's charac
 
 ## 🧪 Testing
 
+⚠️ **TODO: Fix unit tests in CI environment** - Currently unit tests fail in GitHub Actions but work locally. Investigation needed for CI-specific issues.
+
 Run the test suite to ensure everything works correctly:
 
 ```bash
-# Run all tests
-npm test
+# Run all tests (via Makefile)
+make test
 
-# Test file reading and structure
-npm test debug-css
+# Run specific test types
+make test-unit        # Unit tests (currently have CI issues)
+make test-manual      # Manual tests (requires server running)
+make test-integration # Integration tests (requires server running)
 
-# Test server endpoints (requires manual server start)
-npm test manual-css
+# Or use npm directly
+npm test              # Unit tests only
+npm test debug-css    # Test file reading and structure
+npm test manual-css   # Test server endpoints (requires server)
 ```
 
 ## 🚀 Deployment
