@@ -163,7 +163,7 @@ This project celebrates Esquie's character. When contributing:
 
 ## 📄 License
 
-MIT License - feel free to spread Esquie's wisdom!
+Apache License 2.0 - feel free to spread Esquie's wisdom!
 
 ---
 
