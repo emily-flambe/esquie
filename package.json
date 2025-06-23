@@ -1,5 +1,5 @@
 {
-  "name": "esquie-app",
+  "name": "esquie",
   "version": "1.0.0",
   "description": "Esquie web application built with Cloudflare Workers",
   "main": "src/index.js",
