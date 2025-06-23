@@ -12,9 +12,10 @@ Select **"Custom token"** (not "Use template") for maximum control over permissi
 
 ## Step 3: Configure Token Permissions
 
-Set up the token with these **minimum required permissions**:
+Set up the token with these **required permissions**:
 
 ### Account Permissions
+- **Account:Read** - Required to read account membership info
 - **Cloudflare Workers:Edit** - Required to deploy workers
 
 ### Zone Permissions (if your worker uses a custom domain)
