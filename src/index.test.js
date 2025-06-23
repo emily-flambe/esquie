@@ -8,9 +8,15 @@ describe('Esquie Worker - Image Fetching Tests', () => {
     // Mock the ASSETS binding
     env = {
       ASSETS: {
-        fetch: async (url) => {
-          const urlString = typeof url === 'string' ? url : url.toString();
-          const pathname = new URL(urlString).pathname;
+        fetch: async (urlOrRequest) => {
+          let pathname;
+          if (typeof urlOrRequest === 'string') {
+            pathname = new URL(urlOrRequest).pathname;
+          } else if (urlOrRequest instanceof Request) {
+            pathname = new URL(urlOrRequest.url).pathname;
+          } else {
+            pathname = new URL(urlOrRequest.toString()).pathname;
+          }
           
           // List of available images in src/assets/images
           const availableImages = [
@@ -21,6 +27,30 @@ describe('Esquie Worker - Image Fetching Tests', () => {
             '/images/esquie5.jpg',
             '/images/esquie6.jpg'
           ];
+          
+          // Simulate CSS file
+          if (pathname === '/styles.css') {
+            return new Response('/* mock css */', { 
+              status: 200,
+              headers: { 'Content-Type': 'text/css' }
+            });
+          }
+          
+          // Simulate JS file
+          if (pathname === '/script.js') {
+            return new Response('/* mock js */ function initializeApp() {}', { 
+              status: 200,
+              headers: { 'Content-Type': 'application/javascript' }
+            });
+          }
+          
+          // Simulate image config
+          if (pathname === '/image-config.json') {
+            return new Response('{}', { 
+              status: 200,
+              headers: { 'Content-Type': 'application/json' }
+            });
+          }
           
           // Simulate successful response for available images
           if (availableImages.includes(pathname)) {

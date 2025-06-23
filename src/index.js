@@ -92,7 +92,7 @@ async function handleMainPage(env) {
 </head>
 <body>
   <div id="background-image" class="background-image">
-    <img src="/images/${initialImage}" alt="Esquie" />
+    <img id="esquie-image" class="esquie-image" src="/images/${initialImage}" alt="Esquie" />
   </div>
   
   <div id="welcome-screen" class="screen active">

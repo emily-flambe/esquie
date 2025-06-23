@@ -7,6 +7,16 @@
 /* Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital,wght@0,400;1,400&display=swap');
 
+/* CSS Variables */
+:root {
+  --color-primary: #1a1a1a;
+  --color-secondary: #2d2d2d;
+  --color-accent: #404040;
+  --color-text: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.8);
+  --font-family-primary: 'IM Fell Double Pica', serif;
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
