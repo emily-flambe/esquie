@@ -1,8 +1,6 @@
 // Cloudflare Worker - Esquie's Emotional Quotient Quotes
-import quotes from './assets/quotes.json';
 
-// Static quotes and images (no need to load dynamically)
-const QUOTES = quotes;
+// Static images (no need to load dynamically)
 
 const IMAGES = [
   'esquie1.jpg',
@@ -13,10 +11,10 @@ const IMAGES = [
   'esquie6.jpg'
 ];
 
-// Get a random quote from the QUOTES array
-function getRandomQuote() {
-  const randomIndex = Math.floor(Math.random() * QUOTES.length);
-  return QUOTES[randomIndex];
+// Get a random quote from the quotes array
+function getRandomQuote(quotes) {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
 }
 
 // Get a random image filename from the IMAGES array
@@ -25,9 +23,35 @@ function getRandomImage() {
   return IMAGES[randomIndex];
 }
 
+// Load quotes from JSON file
+async function loadQuotes(env) {
+  try {
+    const quotesResponse = await env.ASSETS.fetch(new Request('http://localhost/quotes.json'));
+    if (quotesResponse.status === 200) {
+      return await quotesResponse.json();
+    }
+  } catch (error) {
+    console.error('Error loading quotes:', error);
+  }
+  
+  // Fallback default quotes
+  return [
+    'I too am "Whooo." But I\'m also "Wheee!" So the "Wheee" balances the "Whooo."',
+    'Mon ami!',
+    'Losing a rock is better than never having a rock!',
+    'Stars are the apples of the sky.',
+    'Want a hug?',
+    'Esquie can be sad or bad or even rad! But never ever mad.',
+    'Men trip not on mountains; they stumble upon stones.',
+    'I get sad too, when I lose my stones. But I always find them again. You will find them again too.',
+    'First means number one. Second means number two!'
+  ];
+}
+
 // Handle API endpoint - return random quote/image combination as JSON
-async function handleAPI() {
-  const quote = getRandomQuote();
+async function handleAPI(env) {
+  const quotes = await loadQuotes(env);
+  const quote = getRandomQuote(quotes);
   const image = getRandomImage();
   
   const response = {
@@ -140,7 +164,7 @@ export default {
     if (pathname === '/') {
       return handleMainPage(env);
     } else if (pathname === '/api/random') {
-      return handleAPI();
+      return handleAPI(env);
     }
     
     // For all other paths, serve from assets
