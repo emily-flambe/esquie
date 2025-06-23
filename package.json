@@ -10,6 +10,7 @@
     "start": "wrangler dev --local",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:debug": "vitest run tests/debug-css.test.js",
     "test:integration": "vitest run tests/integration.test.js",
     "test:manual": "vitest run tests/manual-*.test.js --pool=threads",
     "deploy:preview": "wrangler deploy --env preview",
