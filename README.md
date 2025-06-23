@@ -1,5 +1,7 @@
 # Esquie.org
 
+![bonjour](src/assets/images/bonjour.png)
+
 A whimsical web application paying homage to Esquie, the beloved character from Clair Obscur: Expedition 33. Experience Esquie's wholesome wisdom through random quote and image combinations in an immersive full-screen interface.
 
 ## 🦉 About Esquie
