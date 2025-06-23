@@ -1,0 +1,25 @@
+name = "esquie-app"
+main = "src/index.js"
+compatibility_date = "2024-06-01"
+
+[assets]
+directory = "./src/assets"
+binding = "ASSETS"
+
+[vars]
+ENVIRONMENT = "development"
+
+[env.preview]
+name = "esquie-app-preview"
+[env.preview.vars]
+ENVIRONMENT = "preview"
+
+[env.staging]
+name = "esquie-app-staging"
+[env.staging.vars]
+ENVIRONMENT = "staging"
+
+[env.production]
+name = "esquie-app-prod"
+[env.production.vars]
+ENVIRONMENT = "production"

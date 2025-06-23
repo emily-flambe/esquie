@@ -192,3 +192,38 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Cloudflare Workers specific
+# Wrangler output and build files
+.wrangler/
+dist/
+worker/
+
+# Node.js dependencies (for Cloudflare Workers projects)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Environment variables for Workers
+.env.local
+.env.production
+.env.staging
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp

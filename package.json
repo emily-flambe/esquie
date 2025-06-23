@@ -1,0 +1,37 @@
+{
+  "name": "esquie",
+  "version": "1.0.0",
+  "description": "Esquie web application built with Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "wrangler build",
+    "start": "wrangler dev --local",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:debug": "vitest run tests/debug-css.test.js",
+    "test:integration": "vitest run tests/integration.test.js",
+    "test:manual": "vitest run tests/manual-*.test.js --pool=threads",
+    "deploy:preview": "wrangler deploy --env preview",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:prod": "wrangler deploy --env production"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "web-app",
+    "esquie"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.0",
+    "@vitest/ui": "^2.0.5",
+    "tslib": "^2.8.1",
+    "vitest": "^2.0.5",
+    "wrangler": "^4.20.5"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20240605.0"
+  }
+}
