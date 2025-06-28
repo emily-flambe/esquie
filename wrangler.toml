@@ -21,5 +21,9 @@ ENVIRONMENT = "staging"
 
 [env.production]
 name = "esquie-app-prod"
+routes = [
+  { pattern = "esquie.org/*", zone_name = "esquie.org" },
+  { pattern = "esquie.emilycogsdill.com/*", zone_name = "emilycogsdill.com" }
+]
 [env.production.vars]
 ENVIRONMENT = "production"
